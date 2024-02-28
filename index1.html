@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Triatlón de Lacava</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<met name="theme-color" content="#09f">
+	
+	<style>
+		body{
+		font-family: System-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		transition: 1s;
+		}
+		.borde{
+			width: 100%;
+			background-color: rgba(231, 107, 13);
+			height: 70px;
+			transform: translate(8px, -22px);
+			
+		}
+		.titulo{
+			transform: translate(15px,10px);
+		
+		}
+		body{
+			background-image: url('grama.jpg');
+			background-size: cover;
+			padding:0;
+			margin:0;
+			
+			
+		}
+		.hoja{
+		background: white;
+		padding: 190px 300px 500px 300px;
+		margin: 4%;
+		transform: translate(0px,-25px);
+		
+		}
+		.dentro{
+		transform: translate(-245px,-170px);
+		
+		}
+		#seg1,#seg2,#seg3,#segf{
+			width: 50px;
+		}
+		
+		#min1,#min2,#min3,#minf{
+			width: 50px;
+		}
+
+		#hora,#minu,#seg{
+			width: 50px;
+		}
+		#esta1,#esta2,#esta3{
+			width: 80px;
+		}
+		#final{
+			width: 50px;
+		}
+
+		.horac{
+			width: 40px;
+		}
+		.minc{
+			width: 40px;
+		}
+		.segc{
+			width: 40px;
+		}
+
+		.horap{
+			width: 40px;
+		}
+		.minp{
+			width: 40px;
+		}
+		.segp{
+			width: 40px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="contenedor">
+	<div class="borde">
+			
+		<h1 class="titulo">Triatlón Anual</h1> 
+		
+		
+	</div>
+	
+		<div class="hoja">
+		<div class="dentro">
+		<h1> Ingreso: </h1>
+		<p>El gobernador Lacava esta realizando un triatlón, con las siguientes disciplinas: </p>
+		<ol>
+		<strong><li> 10km de caminata.</li>
+		<li> 10km de natación.</li>
+		<li> 30km de ciclismo.</li></strong>
+			<section>
+				<h2>Formulario de Ingreso</h2>
+				<form method="post" action="/">
+				<fieldset>
+					<legend>Información Personal</legend>
+					<label for ="name">Nombre y Apellido:</label>
+					<input type="text" id="name" name="name" placeholder="Rafael Lacava"><br>
+					<label for="cedula">Cedula de identidad:</label>
+					<input type="number" id="cedula" name="cedula" placeholder="8.585.033"><br>
+					<label for="edad">Edad:</label>
+					<input type="number" id="edad" name="edad" placeholder="55"><br>
+					<label for="municipio">Municipio donde vives:</label>
+					<input type="text" id="municipio" name="municipio" placeholder="Naguanagua" required>
+
+
+				</fieldset>
+				<button type="submit">Agregar</button>
+				<fieldset>
+					<legend>Lista</legend>
+					<div>
+					<label for="why">Se Presento:</label>
+					<select name="why" id="why">
+					<option value="1">Presente</option>
+					<option value="2">inasistente</option>
+`					
+					</select>
+					</div>
+					<div class="lista">
+					<label for="hora">hora de comienzo: </label><input type="number" name="hora" id="hora" placeholder="HH" required>
+					<label for="minu">:</label><input type="number" name="minu" id="minu" placeholder="MM" required>
+					<label for="seg">:</label><input type="number" name="seg" id="seg" placeholder="SS" required>
+					<button type="submit">comenzar</button>
+					</div>
+				</fieldset>
+				
+				</form>
+			</section>
+			<br>
+
+			<section>
+			<form method="post" action="/">
+				<fieldset>
+					<legend>Simulación</legend>
+					<div>
+					<label for="nombre2">Nombre: </label>
+					<input type="text" name="nombre2"><br>
+					<label for="esta1">estacion 1: </label><input type="text" id="esta1" name="esta1">
+					<label for="min1">:</label><input type="number" id="min1" name="min1">
+					<label for="seg1">:</label><input type="number" id="seg1" name="seg1"><br>
+					<label for="esta2">estacion 2: </label><input type="text" id="esta2" name="esta2">
+					<label for="min2">:</label><input type="number" name="min2" id="min2">
+					<label for="seg2">:</label><input type="number" name="seg2" id="seg2"><br>
+					<label for="esta3">estacion 3: </label><input type="text" id="esta3" name="esta3">
+					<label for="min3">:</label><input type="number" name="min3" id="min3">
+					<label for="seg3">:</label><input type="number" name="seg3" id="seg3"><br>
+					<label for="final">tiempo final: </label><input type="number" id="final" name="final">
+					<label for="minf">:</label><input type="number" name="minf" id="minf">
+					<label for="segf">:</label><input type="number" name="segf" id="segf">
+
+			</fieldset>
+			</form>
+			</section>
+			<section>
+			<form method="post" action="/">
+			<fieldset>
+			<legend>Podio</legend>
+			<ol>
+			<li>
+				<h4 style="font-family: cursive;"> Primer puesto 🥇 <input type="text" id="nombrep1"> </h4>
+				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
+				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
+				<label>:</label><input type="number" class="segp">
+			</li>
+			<li>
+				<h4 style="font-family: cursive;"> Segundo puesto 🥈<input type="text" id="nombrep2"> </h4>
+				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
+				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
+				<label>:</label><input type="number" class="segp">
+			</li>
+			<li>
+				<h4 style="font-family: cursive;"> Tercer puesto 🥉 <input type="text" id="nombrep3"></h4>
+				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
+				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
+				<label>:</label><input type="number" class="segp">
+			</li>
+			</fieldset>
+			</form>
+			</section>
+		</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
