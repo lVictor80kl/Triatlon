@@ -12,29 +12,39 @@
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		transition: 1s;
 		}
+		
 		.borde{
 			width: 100%;
-			background-color: rgba(231, 107, 13);
+			background-color: rgba(24, 20, 17, 0.685);
 			height: 70px;
 			transform: translate(8px, -22px);
-			
+			margin: 100px 0px 0px 0px;
 		}
 		.titulo{
 			transform: translate(15px,10px);
-		
+			text-align: center; 
+			font-family: Arial Black; 
+			font-weight: bold; 
+			font-size: 40px; 
+			color: #78f348; 
+			text-shadow: 0 1px 0 #050404, 0 2px 0 #000000, 0 3px 0 #000000, 0 4px 0 #aaa, 0 5px 0 #acacac, 0 6px 1px rgba(0,0,0,0.1), 0 0 5px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3), 0 3px 5px rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.2), 0 20px 20px rgba(0,0,0,0.15);
 		}
+			
+    	
 		body{
-			background-image: url('grama.jpg');
+			background-image: url('triathlon-sport-seamless-vector-37644014.jpg');
 			background-size: cover;
 			padding:0;
-			margin:0;
-			
+			margin:0;	
 			
 		}
 		.hoja{
-		background: white;
+		background: rgba(255, 255, 255, 0.932);
 		padding: 190px 300px 500px 300px;
 		margin: 4%;
+		border-color: slategrey;
+		border-style: dashed;
+		border-radius: 10px;
 		transform: translate(0px,-25px);
 		
 		}
@@ -80,6 +90,51 @@
 			width: 40px;
 		}
 
+		fieldset{
+		border: 5px solid #3d8dae;
+ 		border-radius: 15px;
+ 		animation: cambio-borde 5s ease reverse;
+  		background-color: #fff; 
+		}
+		legend{
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		padding: 10px 15px;
+		color: #000000; 
+		border: 1px solid #030303;
+		border-radius: 10px;
+
+		}
+
+		button{
+			display:block;
+			margin-top: 50px;
+			background-color: #7175e8ba;
+			border-radius: 5px;
+			padding: 30;
+			color: #fff;
+			text-decoration: none;
+		}
+		input{
+		transition: transform 0.3s ease-in-out;
+		}
+		input:hover{
+		transform: scale(1.1);
+		}
+		
+		
+@keyframes cambio-borde {
+  0%  {border-color: #070ff0;}
+  10%  {border-color: #0945e9c3;}
+  30%  {border-color: #0618de80;}
+  60%  {border-color: #2a7ce7a3;}
+  80% {border-color: #5375e4ac;}
+  100% {border-color: #384cd364;}
+}
+
+div.seleccionados span {
+	display: block;
+}
+		
 	</style>
 
 </head>
@@ -89,6 +144,7 @@
 	<div class="borde">
 			
 		<h1 class="titulo">Triatlón Anual</h1> 
+		
 		
 		
 	</div>
@@ -104,11 +160,11 @@
 			<section>
 				<h2>Formulario de Ingreso</h2>
 				<form method="post" action="/">
-				<fieldset>
-					<legend>Información Personal</legend>
-					<label for ="name">Nombre y Apellido:</label>
-					<input type="text" id="name" name="name" placeholder="Rafael Lacava"><br>
-					<label for="cedula">Cedula de identidad:</label>
+				<fieldset class="infopersonal"> 
+					<legend> Información Personal</legend>
+					<label for ="name">Nombre y Apellido: </label>
+					<input type="text" id="name" name="name" placeholder="Ingrese su nombre"><br>
+					<label for="cedula">Cedula de identidad: </label>
 					<input type="number" id="cedula" name="cedula" placeholder="8.585.033"><br>
 					<label for="edad">Edad:</label>
 					<input type="number" id="edad" name="edad" placeholder="55"><br>
@@ -117,93 +173,72 @@
 
 
 				</fieldset>
-				<button type="submit">Agregar</button>
+				<button type="button" id="register">Agregar</button>
+				
 				<fieldset>
 					<legend>Lista</legend>
-					<div>
-					<label for="why">Se Presento:</label>
-					<select name="why" id="why">
-					<option value="1">Presente</option>
-					<option value="2">inasistente</option>
-`					
-					</select>
-					</div>
+					<div class="asistencia" id="lista_Asistencia"> </div>
 					<div class="lista">
-					<label for="hora">hora de comienzo: </label><input type="number" name="hora" id="hora" placeholder="HH" required>
-					<label for="minu">:</label><input type="number" name="minu" id="minu" placeholder="MM" required>
-					<label for="seg">:</label><input type="number" name="seg" id="seg" placeholder="SS" required>
-					<button type="submit">comenzar</button>
+					<label for="hora">Hora Inicio: </label><input type="number" name="hora" id="hora" placeholder="08" disabled >
+					<label for="minu">:</label><input type="number" name="minu" id="minu" placeholder="00" disabled>
+					<label for="seg">:</label><input type="number" name="seg" id="ss" placeholder="00" disabled>
+					
+					
 					</div>
 				</fieldset>
-				
 				</form>
+					<button id="btnSeleccionar" >Asistencia</button>
+					<div class="seleccionados" id="seleccionados"></div> 
 			</section>
 			<br>
-
+			<div>
 			<section>
-			<form method="post" action="/">
-				<fieldset>
-					<legend>Simulación</legend>
-					<div>
-					<label for="nombre2">Nombre: </label>
-					<input type="text" name="nombre2"><br>
-					<label for="esta1">estacion 1: </label><input type="text" id="esta1" name="esta1">
-					<label for="min1">:</label><input type="number" id="min1" name="min1">
-					<label for="seg1">:</label><input type="number" id="seg1" name="seg1"><br>
-					<label for="esta2">estacion 2: </label><input type="text" id="esta2" name="esta2">
-					<label for="min2">:</label><input type="number" name="min2" id="min2">
-					<label for="seg2">:</label><input type="number" name="seg2" id="seg2"><br>
-					<label for="esta3">estacion 3: </label><input type="text" id="esta3" name="esta3">
-					<label for="min3">:</label><input type="number" name="min3" id="min3">
-					<label for="seg3">:</label><input type="number" name="seg3" id="seg3"><br>
-					<label for="final">tiempo final: </label><input type="number" id="final" name="final">
-					<label for="minf">:</label><input type="number" name="minf" id="minf">
-					<label for="segf">:</label><input type="number" name="segf" id="segf">
-
-			</fieldset>
-			</form>
+					
+					
 			</section>
-			<section>
+			<section >
 			<form method="post" action="/">
 			<fieldset>
 			<legend>Podio</legend>
+			<div id="podio"></div>
 			<ol>
 			<li>
 				<h4 style="font-family: cursive;"> Primer puesto 🥇 <input type="text" id="nombrep1"> </h4>
-				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
-				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
-				<label>:</label><input type="number" class="segp">
+				<label> Hora de comienzo:</label>08<label>:</label>00<label>:</label>00<label id="horaFinalPrimero"> Hora de finalización: </label> <label id="tiempoCompePrimero"> Tiempo de competencia: </label>
 			</li>
 			<li>
 				<h4 style="font-family: cursive;"> Segundo puesto 🥈<input type="text" id="nombrep2"> </h4>
-				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
+				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</label><input type="number" class="minc">
 				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
 				<label>:</label><input type="number" class="segp">
 			</li>
 			<li>
 				<h4 style="font-family: cursive;"> Tercer puesto 🥉 <input type="text" id="nombrep3"></h4>
-				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</lable><input type="number" class="minc">
+				<label> Hora de comienzo:</label> <input type="number" class="horac"><label>:</label><input type="number" class="minc">
 				<label>:</label><input type="number" class="segc"><label> Hora de finalización: </label><input type="number" class="horap"><label>:</lable><input type="number" class="minp">
 				<label>:</label><input type="number" class="segp">
 			</li>
 			</fieldset>
 			</form>
 			</section>
+			<section>
+				<div id="resultado">
+					<p id="final">
+
+					</p>
+				</div>
+			</section>
+			</div>
 		</div>
 		</div>
+		
 	</div>
 
+	
 
 
 
-
-
-
-
-
-
-
-
+	<script src="app.js"></script>
 
 </body>
 </html>
